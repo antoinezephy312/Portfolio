@@ -1,22 +1,30 @@
 import { profile, about } from "../data";
 import Reveal from "./Reveal";
+import SectionHead from "./SectionHead";
 
 export default function About() {
   return (
     <section id="about" className="section">
       <div className="container">
-        <Reveal>
-          <div className="section__head">
-            <p className="section__eyebrow">About me</p>
-            <h2 className="section__title">{about.heading}</h2>
-          </div>
-        </Reveal>
+        <SectionHead
+          index="01"
+          label="// about"
+          title={about.heading}
+          description="A quick look at who I am, what I build, and where I'm headed."
+        />
 
         <div className="about__grid">
           <Reveal className="about__photo-col">
-            <div className="about__photo">
-              <img src={profile.aboutPhoto} alt={`${profile.name} coding on a laptop`} />
-              <div className="about__photo-badge">&lt;/&gt; in my element</div>
+            <div className="about__media">
+              <div className="about__blob" aria-hidden="true" />
+              <div className="about__photo">
+                <img src={profile.aboutPhoto} alt={`${profile.name} coding on a laptop`} />
+                <div className="about__photo-badge">~/davao</div>
+              </div>
+              <div className="about__exp">
+                <strong>NC II</strong>
+                <span>TESDA certified technician</span>
+              </div>
             </div>
           </Reveal>
 
@@ -27,7 +35,7 @@ export default function About() {
               ))}
               <div className="about__highlights">
                 {about.highlights.map((h) => (
-                  <span key={h} className="pill pill--glow">
+                  <span key={h} className="tag">
                     {h}
                   </span>
                 ))}

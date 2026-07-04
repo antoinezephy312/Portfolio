@@ -1,7 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
-//  ✏️  EDIT THIS FILE to change your portfolio content.
-//  Every word, link, skill and project on the site lives here — no need to
-//  touch the components.
+//  Edit this file to change portfolio content — copy, links, skills, projects.
+//  The components read from here; you shouldn't need to touch them.
 // ─────────────────────────────────────────────────────────────────────────────
 
 import mainPortrait from "./img/clarence/main_image.png";
@@ -12,15 +11,11 @@ export const profile = {
   name: "Clarence",
   fullName: "French Clarence Mangigo",
   role: "AI & Chatbot Developer",
-  // Rotating roles shown by the typing animation in the hero
-  typingRoles: [
-    "AI & Chatbot Developer",
-    "Cybersecurity Enthusiast",
-    "Computer Science Student",
-    "Creator of ClarenceAI",
-  ],
+  status: "Open to freelance & collaboration",
+  // Short line under the name in the hero. <b> spans render in the text colour.
+  roleLine: "AI & chatbot developer, <b>security</b> hobbyist, <b>CS</b> student.",
   tagline:
-    "I build AI chatbots for Facebook Messenger — like ClarenceAI — and I'm deep into cybersecurity, from CTF challenges to pentesting. I love turning ideas into smart, secure, and genuinely useful products.",
+    "I build conversational AI for Facebook Messenger and spend my free time on security — CTFs, pentesting, and writing my own tooling. Currently studying Computer Science at the University of Mindanao.",
   location: "Davao City, Philippines",
   email: "frenchmangigo@gmail.com",
   socials: {
@@ -33,18 +28,28 @@ export const profile = {
   aboutPhoto,
 };
 
+// Honest "at a glance" facts for the hero strip — real credentials, not
+// invented vanity metrics.
+export const stats = [
+  { icon: "bot", value: "ClarenceAI", label: "Live Messenger bot" },
+  { icon: "shield", value: "CTF & Pentest", label: "Security focus" },
+  { icon: "terminal", value: "React · JS", label: "Front-end builds" },
+  { icon: "certificate", value: "CSS NC II", label: "TESDA certified" },
+];
+
 export const about = {
-  heading: "Building AI, and learning to break & secure systems",
+  heading: "A CS student splitting his time between AI and security.",
   paragraphs: [
-    "I'm French Clarence Mangigo — but you can just call me Clarence. I'm a Computer Science student at the University of Mindanao and the owner of ClarenceAI, an AI chatbot that lives right inside Facebook Messenger.",
-    "My two passions are AI and cybersecurity. When I'm not designing chatbot conversations, I'm working through CTF challenges, learning penetration testing, and building tools to understand how systems get attacked and defended. I'm also a CSS NCII–certified technician, so I'm just as comfortable with the hardware as I am with the code.",
+    "I'm French Clarence Mangigo — Clarence for short. I'm a Computer Science student at the University of Mindanao, and I build and run ClarenceAI, a chatbot that lives inside Facebook Messenger.",
+    "Most of my time goes into two things: building AI assistants and learning how systems get attacked and defended. When I'm not working on chatbot flows, I'm doing CTF challenges, reading up on penetration testing, and writing small tools to understand offensive security first-hand.",
+    "I'm also CSS NCII–certified, so I'm comfortable with the hardware and networking side as much as the code.",
   ],
-  highlights: ["🎓 CS Student @ University of Mindanao", "🛡️ Cybersecurity Enthusiast", "📜 CSS NCII Certified"],
+  highlights: ["CS @ University of Mindanao", "CSS NCII certified", "Davao City, PH"],
 };
 
 export const skillGroups = [
   {
-    icon: "🤖",
+    icon: "bot",
     title: "AI & Chatbots",
     skills: [
       "Messenger chatbots",
@@ -55,8 +60,8 @@ export const skillGroups = [
     ],
   },
   {
-    icon: "🛡️",
-    title: "Cybersecurity",
+    icon: "shield",
+    title: "Security",
     skills: [
       "Penetration testing",
       "CTF challenges",
@@ -66,19 +71,19 @@ export const skillGroups = [
     ],
   },
   {
-    icon: "💻",
-    title: "Development & Systems",
-    skills: ["HTML & CSS", "JavaScript", "React", "Git & GitHub", "Computer Systems Servicing"],
+    icon: "terminal",
+    title: "Development",
+    skills: ["HTML & CSS", "JavaScript", "React", "Git & GitHub", "Computer systems servicing"],
   },
 ];
 
 export const featuredProject = {
   name: "ClarenceAI",
-  label: "Flagship project",
+  label: "// featured",
   description:
-    "My AI chatbot assistant, built for Facebook Messenger. ClarenceAI greets users, understands what they need, and replies with real personality — bringing conversational AI straight into people's DMs.",
+    "An AI assistant that runs inside Facebook Messenger. It handles greetings, works out what people are asking, and replies in a natural, conversational way. Built and maintained solo.",
   logo: clarenceAiLogo,
-  tags: ["AI", "Facebook Messenger", "Chatbot", "Conversational UX"],
+  tags: ["AI", "Messenger", "Chatbot", "Conversational UX"],
   // Add real URLs when they're ready — the buttons appear automatically.
   links: {
     live: "https://www.facebook.com/clarenceai.1", // ClarenceAI's Facebook page
@@ -91,35 +96,35 @@ export const upcomingProjects = [
     command: "npm run build store",
     title: "E-Commerce Website",
     blurb:
-      "A full online store I'm currently building — product browsing, cart, and checkout. Still hunting for the perfect name for it.",
-    status: "In development",
+      "A full online store — product browsing, cart, and checkout. Currently in progress; still settling on a name.",
+    status: "in dev",
   },
   {
     command: "python3 rat.py --lab-only",
-    title: "RAT — Offensive Security Tool",
+    title: "RAT — offensive security tool",
     blurb:
-      "A Remote Access Tool I'm developing strictly for Capture The Flag competitions and authorized penetration testing — a hands-on way to learn offensive security and how to defend against it.",
-    status: "For CTF & Pentesting",
+      "A remote access tool I'm building strictly for Capture The Flag and authorized pentesting — a hands-on way to learn offensive tradecraft and how to defend against it.",
+    status: "lab only",
   },
 ];
 
 export const journey = [
   {
-    period: "2026 — Present",
+    period: "2026 — present",
     title: "BS Computer Science",
     place: "University of Mindanao",
-    text: "Currently a college student diving deep into computer science — turning 2nd year this August 2026. Focused on AI development and cybersecurity.",
+    text: "Studying computer science, focused on AI development and security. Moving into 2nd year this August 2026.",
   },
   {
-    period: "Certification",
+    period: "certification",
     title: "CSS NCII Certified",
     place: "Computer Systems Servicing — National Certificate II (TESDA)",
-    text: "Nationally certified in Computer Systems Servicing: hardware, networking, and system installation & maintenance.",
+    text: "Nationally certified in computer systems servicing: hardware, networking, and system installation and maintenance.",
   },
   {
     period: "2025",
     title: "TVL – ICT (CSS) Graduate",
     place: "Valencia National High School",
-    text: "Graduated Senior High School under the Technical-Vocational-Livelihood track, ICT strand (Computer Systems Servicing) — where my journey in tech began.",
+    text: "Graduated senior high under the Technical-Vocational-Livelihood track, ICT strand (Computer Systems Servicing) — where the tech started for me.",
   },
 ];

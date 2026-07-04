@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { profile } from "../data";
+import { BotIcon, ArrowUpRightIcon } from "./Icons";
 
 const links = [
   { id: "about", label: "About" },
@@ -38,6 +39,9 @@ export default function Navbar() {
     <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
       <div className="container nav__inner">
         <a href="#top" className="nav__logo" onClick={() => setOpen(false)}>
+          <span className="nav__mark" aria-hidden="true">
+            <BotIcon width={19} height={19} />
+          </span>
           {profile.name}
           <span className="nav__dot">.</span>
         </a>
@@ -53,8 +57,11 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href="#contact" className="btn btn--small" onClick={() => setOpen(false)}>
-            Hire me
+          <a href="#contact" className="btn btn--small nav__cta" onClick={() => setOpen(false)}>
+            <span className="btn__ico">
+              <ArrowUpRightIcon width={14} height={14} />
+            </span>
+            Get in touch
           </a>
         </nav>
 
