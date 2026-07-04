@@ -79,3 +79,53 @@ export function PinIcon(props) {
     </svg>
   );
 }
+
+export function CertificateIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="12" cy="9" r="5.5" />
+      <path d="m9 13.5-1.5 7L12 18l4.5 2.5L15 13.5" />
+      <path d="m9.8 9 1.5 1.6L14.4 7.5" />
+    </svg>
+  );
+}
+
+export function ArrowUpRightIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
+    </svg>
+  );
+}
+
+export function BotIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="4" y="8" width="16" height="11" rx="2.5" />
+      <path d="M12 8V4.5" />
+      <circle cx="12" cy="3.5" r="1" />
+      <path d="M1.5 12.5v3M22.5 12.5v3" />
+      <path d="M9 13h.01M15 13h.01" />
+    </svg>
+  );
+}
+
+export function ShieldIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 3 5 6v5c0 4.2 2.9 7.9 7 9 4.1-1.1 7-4.8 7-9V6l-7-3Z" />
+      <path d="m9.2 12 2 2 3.6-3.8" />
+    </svg>
+  );
+}
+
+export function TerminalIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="3" y="4.5" width="18" height="15" rx="2" />
+      <path d="m7 9.5 3 2.5-3 2.5" />
+      <path d="M12.5 15h4" />
+    </svg>
+  );
+}

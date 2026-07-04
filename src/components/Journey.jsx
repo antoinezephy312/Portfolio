@@ -1,16 +1,17 @@
 import { journey } from "../data";
 import Reveal from "./Reveal";
+import SectionHead from "./SectionHead";
 
 export default function Journey() {
   return (
     <section id="journey" className="section section--alt">
       <div className="container">
-        <Reveal>
-          <div className="section__head">
-            <p className="section__eyebrow">Journey</p>
-            <h2 className="section__title">Education &amp; experience</h2>
-          </div>
-        </Reveal>
+        <SectionHead
+          index="04"
+          label="// journey"
+          title={<>Education &amp; <em>experience</em></>}
+          description="How I got here — school, certifications, and the path so far."
+        />
 
         <div className="timeline">
           {journey.map((item, i) => (

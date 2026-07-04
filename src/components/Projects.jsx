@@ -1,6 +1,7 @@
 import { featuredProject, upcomingProjects } from "../data";
 import Reveal from "./Reveal";
-import { ExternalLinkIcon, CodeIcon } from "./Icons";
+import SectionHead from "./SectionHead";
+import { CodeIcon, ArrowUpRightIcon } from "./Icons";
 
 export default function Projects() {
   const { links } = featuredProject;
@@ -9,17 +10,33 @@ export default function Projects() {
   return (
     <section id="projects" className="section">
       <div className="container">
-        <Reveal>
-          <div className="section__head">
-            <p className="section__eyebrow">Projects</p>
-            <h2 className="section__title">Things I&apos;ve built</h2>
-          </div>
-        </Reveal>
+        <SectionHead
+          index="03"
+          label="// projects"
+          title={<>Things I&apos;ve <em>built</em></>}
+          description="One shipped product, and what I'm building next — in the open."
+        />
 
         <Reveal>
-          <article className="card featured">
+          <article className="card featured tilt">
             <div className="featured__media">
-              <img src={featuredProject.logo} alt={`${featuredProject.name} logo`} />
+              <div className="chat">
+                <div className="chat__head">
+                  <img className="chat__avatar" src={featuredProject.logo} alt="" />
+                  <div>
+                    <strong>{featuredProject.name}</strong>
+                    <span>
+                      <span className="chat__online" /> Active now
+                    </span>
+                  </div>
+                </div>
+                <div className="chat__body">
+                  <div className="chat__bubble chat__bubble--in">Hi! I&apos;m ClarenceAI 👋</div>
+                  <div className="chat__bubble chat__bubble--in">How can I help you today?</div>
+                  <div className="chat__bubble chat__bubble--out">What can you do?</div>
+                  <div className="chat__bubble chat__bubble--in">Ask me anything — I reply 24/7 ✨</div>
+                </div>
+              </div>
             </div>
             <div className="featured__body">
               <span className="featured__label">{featuredProject.label}</span>
@@ -27,7 +44,7 @@ export default function Projects() {
               <p>{featuredProject.description}</p>
               <div className="featured__tags">
                 {featuredProject.tags.map((tag) => (
-                  <span key={tag} className="pill">
+                  <span key={tag} className="tag">
                     {tag}
                   </span>
                 ))}
@@ -35,15 +52,21 @@ export default function Projects() {
               <div className="featured__actions">
                 {links.live && (
                   <a className="btn btn--small" href={links.live} target="_blank" rel="noreferrer">
-                    <ExternalLinkIcon width={16} height={16} /> Live demo
+                    <span className="btn__ico">
+                      <ArrowUpRightIcon width={13} height={13} />
+                    </span>
+                    Visit ClarenceAI
                   </a>
                 )}
                 {links.code && (
                   <a className="btn btn--small btn--ghost" href={links.code} target="_blank" rel="noreferrer">
-                    <CodeIcon width={16} height={16} /> Source code
+                    <span className="btn__ico">
+                      <CodeIcon width={13} height={13} />
+                    </span>
+                    Source code
                   </a>
                 )}
-                {!hasLinks && <span className="featured__soon">🚀 Public demo coming soon</span>}
+                {!hasLinks && <span className="featured__soon">Public demo coming soon</span>}
               </div>
             </div>
           </article>
@@ -52,7 +75,7 @@ export default function Projects() {
         <div className="upcoming__grid">
           {upcomingProjects.map((project, i) => (
             <Reveal key={project.title} delay={i * 120}>
-              <article className="card terminal">
+              <article className="card terminal tilt">
                 <div className="terminal__bar">
                   <span />
                   <span />

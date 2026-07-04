@@ -1,5 +1,6 @@
 import { profile } from "../data";
 import Reveal from "./Reveal";
+import SectionHead from "./SectionHead";
 import { GitHubIcon, FacebookIcon, MailIcon, SendIcon } from "./Icons";
 
 export default function Contact() {
@@ -17,19 +18,19 @@ export default function Contact() {
   return (
     <section id="contact" className="section">
       <div className="container">
-        <Reveal>
-          <div className="section__head">
-            <p className="section__eyebrow">Contact</p>
-            <h2 className="section__title">Let&apos;s build something smart together</h2>
-          </div>
-        </Reveal>
+        <SectionHead
+          index="05"
+          label="// contact"
+          title={<>Let&apos;s <em>talk</em></>}
+          description="Open to freelance work, collaborations, or just a good conversation."
+        />
 
         <div className="contact__grid">
           <Reveal>
             <div className="contact__info">
               <p>
-                Have a project in mind, a chatbot idea, or just want to say hi? My inbox is
-                always open — I&apos;ll get back to you as soon as I can.
+                Have a project, a chatbot idea, or a question? Send a message and I&apos;ll
+                get back to you.
               </p>
               <a className="card contact__email" href={`mailto:${profile.email}`}>
                 <span className="contact__email-icon">
@@ -83,7 +84,10 @@ export default function Contact() {
                 />
               </label>
               <button type="submit" className="btn">
-                <SendIcon width={16} height={16} /> Send message
+                <span className="btn__ico">
+                  <SendIcon width={14} height={14} />
+                </span>
+                Send message
               </button>
             </form>
           </Reveal>
