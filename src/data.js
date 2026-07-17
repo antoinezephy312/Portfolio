@@ -12,8 +12,13 @@ export const profile = {
   fullName: "French Clarence Mangigo",
   role: "AI & Chatbot Developer",
   status: "Open to freelance & collaboration",
-  // Short line under the name in the hero. <b> spans render in the text colour.
-  roleLine: "AI & chatbot developer, <b>security</b> hobbyist, <b>CS</b> student.",
+  // Phrases the hero types out one after another, on loop.
+  roles: [
+    "AI & chatbot developer",
+    "security enthusiast",
+    "CTF player",
+    "CS student @ UMindanao",
+  ],
   tagline:
     "I build conversational AI for Facebook Messenger and spend my free time on security — CTFs, pentesting, and writing my own tooling. Currently studying Computer Science at the University of Mindanao.",
   location: "Davao City, Philippines",

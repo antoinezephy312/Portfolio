@@ -44,6 +44,9 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p>© {new Date().getFullYear()} {profile.fullName} · built with React &amp; Vite</p>
+          <span className="footer__hint">
+            psst — press <kbd>`</kbd> anywhere for a surprise
+          </span>
           <a href="#top" className="footer__top">
             Back to top ↑
           </a>
