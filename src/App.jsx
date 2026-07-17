@@ -1,3 +1,5 @@
+import Preloader from "./components/Preloader.jsx";
+import Cursor from "./components/Cursor.jsx";
 import ScrollProgress from "./components/ScrollProgress.jsx";
 import CursorGlow from "./components/CursorGlow.jsx";
 import SocialRail from "./components/SocialRail.jsx";
@@ -11,6 +13,7 @@ import Projects from "./components/Projects.jsx";
 import Journey from "./components/Journey.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
+import TerminalOverlay from "./components/TerminalOverlay.jsx";
 import useCardSpotlight from "./hooks/useCardSpotlight";
 
 export default function App() {
@@ -18,6 +21,8 @@ export default function App() {
 
   return (
     <>
+      <Preloader />
+      <Cursor />
       <CursorGlow />
       <ScrollProgress />
       <SocialRail />
@@ -33,6 +38,7 @@ export default function App() {
       </main>
       <Footer />
       <BackToTop />
+      <TerminalOverlay />
     </>
   );
 }

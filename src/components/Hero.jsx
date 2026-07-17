@@ -1,6 +1,9 @@
 import { profile, featuredProject, stats } from "../data";
 import useLocalTime from "../hooks/useLocalTime";
+import useMagnetic from "../hooks/useMagnetic";
 import Reveal from "./Reveal";
+import ParticleField from "./ParticleField";
+import Typewriter from "./Typewriter";
 import {
   BotIcon,
   ShieldIcon,
@@ -18,9 +21,12 @@ const statIcons = {
 
 export default function Hero() {
   const time = useLocalTime("Asia/Manila");
+  const magPrimary = useMagnetic(0.22);
+  const magGhost = useMagnetic(0.22);
 
   return (
     <section id="top" className="hero">
+      <ParticleField />
       <div className="container">
         <div className="hero__inner">
           <div className="hero__text">
@@ -33,7 +39,9 @@ export default function Hero() {
 
             <Reveal delay={70}>
               <h1 className="hero__name">
-                <span>Clarence</span>
+                <span className="glitch" data-text="Clarence">
+                  Clarence
+                </span>
                 <span>
                   <span className="outline">Mangigo</span>
                   <span className="accent">.</span>
@@ -42,10 +50,10 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={130}>
-              <p
-                className="hero__role"
-                dangerouslySetInnerHTML={{ __html: profile.roleLine }}
-              />
+              <p className="hero__role hero__role--typed">
+                <span className="hero__prompt">&gt;_</span>
+                <Typewriter words={profile.roles} />
+              </p>
             </Reveal>
 
             <Reveal delay={190}>
@@ -54,13 +62,13 @@ export default function Hero() {
 
             <Reveal delay={250}>
               <div className="hero__cta">
-                <a className="btn" href="#projects">
+                <a ref={magPrimary} className="btn" href="#projects">
                   <span className="btn__ico">
                     <ArrowUpRightIcon width={15} height={15} />
                   </span>
                   View my work
                 </a>
-                <a className="btn btn--ghost" href="#contact">
+                <a ref={magGhost} className="btn btn--ghost" href="#contact">
                   <span className="btn__ico">
                     <ArrowUpRightIcon width={15} height={15} />
                   </span>

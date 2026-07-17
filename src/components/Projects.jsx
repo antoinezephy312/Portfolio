@@ -1,7 +1,49 @@
+import { useEffect, useRef, useState } from "react";
 import { featuredProject, upcomingProjects } from "../data";
 import Reveal from "./Reveal";
 import SectionHead from "./SectionHead";
 import { CodeIcon, ArrowUpRightIcon } from "./Icons";
+
+// Types the terminal command out character by character once the card
+// scrolls into view.
+function TypedCommand({ text }) {
+  const ref = useRef(null);
+  const [len, setLen] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setLen(text.length);
+      return;
+    }
+    const el = ref.current;
+    let interval = 0;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        interval = setInterval(() => {
+          setLen((l) => {
+            if (l >= text.length) {
+              clearInterval(interval);
+              return l;
+            }
+            return l + 1;
+          });
+        }, 45);
+      },
+      { threshold: 0.4 }
+    );
+    // The span itself starts empty (zero size), which would never reach the
+    // visibility threshold — observe the surrounding command line instead.
+    observer.observe(el.parentElement ?? el);
+    return () => {
+      observer.disconnect();
+      clearInterval(interval);
+    };
+  }, [text]);
+
+  return <span ref={ref}>{text.slice(0, len)}</span>;
+}
 
 export default function Projects() {
   const { links } = featuredProject;
@@ -84,7 +126,8 @@ export default function Projects() {
                 </div>
                 <div className="terminal__body">
                   <p className="terminal__command">
-                    <span className="terminal__prompt">$</span> {project.command}
+                    <span className="terminal__prompt">$</span>{" "}
+                    <TypedCommand text={project.command} />
                     <span className="caret caret--small" aria-hidden="true" />
                   </p>
                   <h3>{project.title}</h3>
